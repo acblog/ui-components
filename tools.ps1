@@ -1,11 +1,7 @@
 if ($args.Count -gt 0) {
     switch ($args[0]) {
         "npmup?" {
-            Set-Location src/AcBlog.Client.Components.Markdown ; ncu ; Set-Location ../..
-            if (!$?) {
-                exit 1
-            }
-            Set-Location src/AcBlog.Client.Components.CodeEditor ; ncu ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Markdown ; ncu ; Set-Location ../..
             if (!$?) {
                 exit 1
             }
@@ -15,11 +11,7 @@ if ($args.Count -gt 0) {
             }
         }
         "npmup" {
-            Set-Location src/AcBlog.Client.Components.Markdown ; ncu -u ; npm install ; Set-Location ../..
-            if (!$?) {
-                exit 1
-            }
-            Set-Location src/AcBlog.Client.Components.CodeEditor ; ncu -u ; npm install ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Markdown ; ncu -u ; npm install ; Set-Location ../..
             if (!$?) {
                 exit 1
             }
@@ -30,15 +22,11 @@ if ($args.Count -gt 0) {
         }
         "restore" {
             Write-Output "Restore npm..."
-            Set-Location src/AcBlog.Client.Components.Markdown ; npm ci ; gulp ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Markdown ; npm ci ; gulp ; Set-Location ../..
             if (!$?) {
                 exit 1
             }
-            Set-Location src/AcBlog.Client.Components.Slides ; libman restore ; Set-Location ../..
-            if (!$?) {
-                exit 1
-            }
-            Set-Location src/AcBlog.Client.Components.CodeEditor ; npm ci ; gulp ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Slides ; libman restore ; Set-Location ../..
             if (!$?) {
                 exit 1
             }

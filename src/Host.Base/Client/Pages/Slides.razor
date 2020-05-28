@@ -1,0 +1,14 @@
+﻿@page "/slides"
+@inject HttpClient Http
+
+<AcBlog.UI.Components.Slides.SlidesRenderer Value="@Value" />
+
+@code{
+    private string Value = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        Value = await Http.GetStringAsync("data/slides.md");
+        await base.OnInitializedAsync();
+    }
+}

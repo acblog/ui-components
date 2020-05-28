@@ -24,26 +24,30 @@ namespace AcBlog.UI.Components
             }
         }
 
-        public UIComponent AddLocalScriptResource(string path, bool autoLoad = true)
+        public UIComponent AddScriptResource(string path, bool autoLoad = true)
         {
             Resources.Add(new UIComponentResource
             {
                 Type = UIComponentResourceType.Script,
-                Path = $"_content/{AssemblyName}/{path}",
+                Path = path,
                 AutoLoad = autoLoad,
             });
             return this;
         }
 
-        public UIComponent AddLocalStyleSheetResource(string path, bool autoLoad = true)
+        public UIComponent AddStyleSheetResource(string path, bool autoLoad = true)
         {
             Resources.Add(new UIComponentResource
             {
                 Type = UIComponentResourceType.StyleSheet,
-                Path = $"_content/{AssemblyName}/{path}",
+                Path = path,
                 AutoLoad = autoLoad,
             });
             return this;
         }
+
+        public UIComponent AddLocalScriptResource(string path, bool autoLoad = true) => AddScriptResource($"_content/{AssemblyName}/{path}", autoLoad);
+
+        public UIComponent AddLocalStyleSheetResource(string path, bool autoLoad = true) => AddStyleSheetResource($"_content/{AssemblyName}/{path}", autoLoad);
     }
 }

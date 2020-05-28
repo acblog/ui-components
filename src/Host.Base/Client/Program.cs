@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AcBlog.UI.Components;
 using AcBlog.UI.Components.Loading;
+using AcBlog.UI.Components.Markdown;
+using AcBlog.UI.Components.Slides;
 
 namespace Host.Base.Client
 {
@@ -19,7 +21,10 @@ namespace Host.Base.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.AddUIComponents().AddUIComponent<LoadingUIComponent>();
+            builder.AddUIComponents()
+                .AddUIComponent<LoadingUIComponent>()
+                .AddUIComponent<MarkdownUIComponent>()
+                .AddUIComponent<SlidesUIComponent>();
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
