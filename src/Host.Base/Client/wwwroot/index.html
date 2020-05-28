@@ -8,6 +8,7 @@
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
+    <link href="//cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -20,6 +21,11 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/AcBlog.UI.Components.Core/component.js"></script>
+
+    <script src="_content/BlazorMonaco/lib/monaco-editor/min/vs/loader.js"></script>
+    <script>require.config({ paths: { 'vs': '_content/BlazorMonaco/lib/monaco-editor/min/vs' } });</script>
+    <script src="_content/BlazorMonaco/lib/monaco-editor/min/vs/editor/editor.main.js"></script>
+    <script src="_content/BlazorMonaco/jsInterop.js"></script>
 </body>
 
 </html>

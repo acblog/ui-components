@@ -27,6 +27,7 @@ namespace AcBlog.UI.Components
                     if (r.AutoLoad)
                         await r.Load(jsRuntime);
                 }
+                builder.Services.TryAddEnumerable(c.Services);
             }
         }
     }

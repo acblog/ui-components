@@ -16,7 +16,9 @@
     <ProjectReference Include="..\..\AcBlog.UI.Components.Core\AcBlog.UI.Components.Core.csproj" />
     <ProjectReference Include="..\..\AcBlog.UI.Components.Loading\AcBlog.UI.Components.Loading.csproj" />
     <ProjectReference Include="..\..\AcBlog.UI.Components.Markdown\AcBlog.UI.Components.Markdown.csproj" />
+    <ProjectReference Include="..\..\AcBlog.UI.Components.Modal\AcBlog.UI.Components.Modal.csproj" />
     <ProjectReference Include="..\..\AcBlog.UI.Components.Slides\AcBlog.UI.Components.Slides.csproj" />
+    <ProjectReference Include="..\..\AcBlog.UI.Components.Toast\AcBlog.UI.Components.Toast.csproj" />
     <ProjectReference Include="..\Shared\Host.Base.Shared.csproj" />
   </ItemGroup>
 

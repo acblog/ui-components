@@ -49,3 +49,5 @@ jobs:
         dotnet nuget push ./packages/AcBlog.UI.Components.Loading.$env:build_version.nupkg -k $env:MYGET_TOKEN -s https://www.myget.org/F/stardustdl/api/v2/package
         dotnet nuget push ./packages/AcBlog.UI.Components.Markdown.$env:build_version.nupkg -k $env:MYGET_TOKEN -s https://www.myget.org/F/stardustdl/api/v2/package
         dotnet nuget push ./packages/AcBlog.UI.Components.Slides.$env:build_version.nupkg -k $env:MYGET_TOKEN -s https://www.myget.org/F/stardustdl/api/v2/package
+        dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$env:build_version.nupkg -k $env:MYGET_TOKEN -s https://www.myget.org/F/stardustdl/api/v2/package
+        dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$env:build_version.nupkg -k $env:MYGET_TOKEN -s https://www.myget.org/F/stardustdl/api/v2/package

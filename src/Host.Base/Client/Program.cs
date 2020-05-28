@@ -11,6 +11,8 @@ using AcBlog.UI.Components;
 using AcBlog.UI.Components.Loading;
 using AcBlog.UI.Components.Markdown;
 using AcBlog.UI.Components.Slides;
+using AcBlog.UI.Components.Modal;
+using AcBlog.UI.Components.Toast;
 
 namespace Host.Base.Client
 {
@@ -24,7 +26,9 @@ namespace Host.Base.Client
             builder.AddUIComponents()
                 .AddUIComponent<LoadingUIComponent>()
                 .AddUIComponent<MarkdownUIComponent>()
-                .AddUIComponent<SlidesUIComponent>();
+                .AddUIComponent<SlidesUIComponent>()
+                .AddUIComponent<ModalUIComponent>()
+                .AddUIComponent<ToastUIComponent>();
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 

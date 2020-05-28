@@ -1,0 +1,21 @@
+﻿@page "/modal"
+@inject IModalService ModalService
+
+<button @onclick="ShowModal" class="btn btn-primary">View Form</button>
+
+@code {
+    async Task ShowModal()
+    {
+        var formModal = ModalService.Show<ModalForm>("Please SignUp");
+        var result = await formModal.Result;
+
+        if (result.Cancelled)
+        {
+            Console.WriteLine("Modal was cancelled");
+        }
+        else
+        {
+            Console.WriteLine(result.Data);
+        }
+    }
+}
