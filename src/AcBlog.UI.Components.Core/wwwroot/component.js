@@ -1,15 +1,25 @@
 window.AcBlogUIComponentsCore = {
     loadScript: function (src) {
-        var fileref = document.createElement('script');
-        fileref.setAttribute("type", "text/javascript");
-        fileref.setAttribute("src", src);
-        document.body.appendChild(fileref);
+        return new Promise((resolve, reject) => {
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = "text/javascript";
+
+            script.onload = function () {
+                resolve()
+            }
+            script.onerror = function (error) {
+                reject(error)
+            }
+
+            document.body.appendChild(script);
+        })
     },
     loadStyleSheet: function (href) {
-        var fileref = document.createElement('link');
-        fileref.setAttribute("rel", "stylesheet");
-        fileref.setAttribute("type", "text/css");
-        fileref.setAttribute("href", href);
-        document.head.appendChild(fileref);
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = href;
+        document.head.appendChild(link);
     }
 };
