@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Markdo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Slides", "src\AcBlog.UI.Components.Slides\AcBlog.UI.Components.Slides.csproj", "{7AD93582-E61F-4D19-BC3B-3BDB651DB3A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcBlog.UI.Components.Modal", "src\AcBlog.UI.Components.Modal\AcBlog.UI.Components.Modal.csproj", "{47940994-D6DA-491A-9357-C4A8591F8D99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Modal", "src\AcBlog.UI.Components.Modal\AcBlog.UI.Components.Modal.csproj", "{47940994-D6DA-491A-9357-C4A8591F8D99}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Toast", "src\AcBlog.UI.Components.Toast\AcBlog.UI.Components.Toast.csproj", "{A5DEA812-8827-4282-8BD4-046724F39309}"
 EndProject

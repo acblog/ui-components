@@ -1,0 +1,12 @@
+﻿@inject UIComponentCollection Components
+
+@foreach (var c in Components.Components)
+{
+    foreach (var r in c.Resources)
+    {
+        if (r.Type == UIComponentResourceType.Script)
+        {
+            @((MarkupString)($"<script type=\"text/javascript\" src=\"{r.Path}\"></script>"))
+        }
+    }
+}

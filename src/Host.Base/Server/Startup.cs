@@ -6,6 +6,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Host.Base.Client;
+using AcBlog.UI.Components.Loading;
+using AcBlog.UI.Components.Markdown;
+using AcBlog.UI.Components.Slides;
+using AcBlog.UI.Components.Modal;
+using AcBlog.UI.Components.Toast;
+using AcBlog.UI.Components;
 
 namespace Host.Base.Server
 {
@@ -22,6 +29,13 @@ namespace Host.Base.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddUIComponents()
+                .AddUIComponent<ClientUIComponent>()
+                .AddUIComponent<LoadingUIComponent>()
+                .AddUIComponent<MarkdownUIComponent>()
+                .AddUIComponent<SlidesUIComponent>()
+                .AddUIComponent<ModalUIComponent>()
+                .AddUIComponent<ToastUIComponent>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -52,7 +66,7 @@ namespace Host.Base.Server
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
-                endpoints.MapFallbackToFile("index.html");
+                endpoints.MapFallbackToPage("/_Host");
             });
         }
     }

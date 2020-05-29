@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Collections.Generic;
 
@@ -6,7 +7,9 @@ namespace AcBlog.UI.Components
 {
     public class UIComponentCollection
     {
-        public WebAssemblyHostBuilder? HostBuilder { get; }
+        public UIComponentCollection(IServiceCollection services) => Services = services;
+
+        IServiceCollection Services { get; }
 
         public IList<UIComponent> Components { get; } = new List<UIComponent>();
 
@@ -17,7 +20,7 @@ namespace AcBlog.UI.Components
             where TComponent : UIComponent
         {
             Components.Add(component);
-            HostBuilder?.Services.TryAddEnumerable(component.Services);
+            Services.TryAddEnumerable(component.Services);
             return this;
         }
     }

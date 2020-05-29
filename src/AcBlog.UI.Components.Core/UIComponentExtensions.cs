@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.JSInterop;
@@ -8,10 +9,10 @@ namespace AcBlog.UI.Components
 {
     public static class UIComponentExtensions
     {
-        public static UIComponentCollection AddUIComponents(this WebAssemblyHostBuilder builder)
+        public static UIComponentCollection AddUIComponents(this IServiceCollection services)
         {
-            UIComponentCollection uIComponentCollection = new UIComponentCollection();
-            builder.Services.AddSingleton(uIComponentCollection);
+            UIComponentCollection uIComponentCollection = new UIComponentCollection(services);
+            services.AddSingleton(uIComponentCollection);
             return uIComponentCollection;
         }
 
@@ -27,7 +28,6 @@ namespace AcBlog.UI.Components
                     if (r.AutoLoad)
                         await r.Load(jsRuntime);
                 }
-                builder.Services.TryAddEnumerable(c.Services);
             }
         }
     }

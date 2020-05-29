@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@page "/"
+@model Host.Base.Server.Pages._HostModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Host.Base.Client
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,10 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Host.Base</title>
     <base href="/" />
+    <component type="typeof(AcBlog.UI.Components.StyleSheetDeclare)" render-mode="Static" />
 </head>
 
 <body>
-    <app>Loading...</app>
+    <app>
+        <component type="typeof(App)" render-mode="Static" />
+    </app>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -18,6 +26,8 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/AcBlog.UI.Components.Core/component.js"></script>
+
+    <component type="typeof(AcBlog.UI.Components.ScriptDeclare)" render-mode="Static" />
 </body>
 
 </html>

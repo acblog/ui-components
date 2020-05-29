@@ -23,7 +23,8 @@ namespace Host.Base.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.AddUIComponents()
+            builder.Services.AddUIComponents()
+                .AddUIComponent<ClientUIComponent>()
                 .AddUIComponent<LoadingUIComponent>()
                 .AddUIComponent<MarkdownUIComponent>()
                 .AddUIComponent<SlidesUIComponent>()
