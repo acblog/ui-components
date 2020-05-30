@@ -37,6 +37,8 @@ namespace Host.Base.Server
                 .AddUIComponent<ModalUIComponent>()
                 .AddUIComponent<ToastUIComponent>();
 
+            services.AddHttpClient();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

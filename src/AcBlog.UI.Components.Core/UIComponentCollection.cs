@@ -20,6 +20,7 @@ namespace AcBlog.UI.Components
             where TComponent : UIComponent
         {
             Components.Add(component);
+            Services.TryAddSingleton(component);
             Services.TryAddEnumerable(component.Services);
             return this;
         }
