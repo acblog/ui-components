@@ -8,14 +8,10 @@ namespace AcBlog.UI.Components.Modal
 {
     public class ModalUIComponent : UIComponent
     {
-        public ModalUIComponent() : this(true)
-        {
-        }
-
-        public ModalUIComponent(bool autoLoad = true)
+        public ModalUIComponent()
         {
             Services.AddBlazoredModal();
-            AddStyleSheetResource("_content/Blazored.Modal/blazored-modal.css", autoLoad);
+            AddStyleSheetResource("_content/Blazored.Modal/blazored-modal.css");
         }
     }
 }

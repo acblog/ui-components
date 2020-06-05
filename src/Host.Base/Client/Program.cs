@@ -13,6 +13,7 @@ using AcBlog.UI.Components.Markdown;
 using AcBlog.UI.Components.Slides;
 using AcBlog.UI.Components.Modal;
 using AcBlog.UI.Components.Toast;
+using AcBlog.Extensions;
 
 namespace Host.Base.Client
 {
@@ -23,17 +24,17 @@ namespace Host.Base.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddUIComponents()
-                .AddUIComponent<ClientUIComponent>()
-                .AddUIComponent<LoadingUIComponent>()
-                .AddUIComponent<MarkdownUIComponent>()
-                .AddUIComponent<SlidesUIComponent>()
-                .AddUIComponent<ModalUIComponent>()
-                .AddUIComponent<ToastUIComponent>();
+            builder.Services.AddExtensions()
+                .AddExtension<ClientUIComponent>()
+                .AddExtension<LoadingUIComponent>()
+                .AddExtension<MarkdownUIComponent>()
+                .AddExtension<SlidesUIComponent>()
+                .AddExtension<ModalUIComponent>()
+                .AddExtension<ToastUIComponent>();
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            await builder.UseUIComponents();
+            await builder.UseExtensions();
 
             await builder.Build().RunAsync();
         }

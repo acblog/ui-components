@@ -7,13 +7,9 @@ namespace AcBlog.UI.Components.Loading
 {
     public class LoadingUIComponent : UIComponent
     {
-        public LoadingUIComponent() : this(true)
+        public LoadingUIComponent()
         {
-        }
-
-        public LoadingUIComponent(bool autoLoad = true)
-        {
-            AddLocalStyleSheetResource("component.css", autoLoad);
+            AddLocalStyleSheetResource("component.css");
         }
     }
 }

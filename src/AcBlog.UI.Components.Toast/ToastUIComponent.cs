@@ -8,14 +8,10 @@ namespace AcBlog.UI.Components.Toast
 {
     public class ToastUIComponent : UIComponent
     {
-        public ToastUIComponent() : this(true)
-        {
-        }
-
-        public ToastUIComponent(bool autoLoad = true)
+        public ToastUIComponent()
         {
             Services.AddBlazoredToast();
-            AddStyleSheetResource("_content/Blazored.Toast/blazored-toast.min.css", autoLoad);
+            AddStyleSheetResource("_content/Blazored.Toast/blazored-toast.min.css");
         }
     }
 }

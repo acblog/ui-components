@@ -13,6 +13,7 @@ using AcBlog.UI.Components.Slides;
 using AcBlog.UI.Components.Modal;
 using AcBlog.UI.Components.Toast;
 using AcBlog.UI.Components;
+using AcBlog.Extensions;
 
 namespace Host.Base.Server
 {
@@ -29,13 +30,13 @@ namespace Host.Base.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddUIComponents()
-                .AddUIComponent<ClientUIComponent>()
-                .AddUIComponent<LoadingUIComponent>()
-                .AddUIComponent<MarkdownUIComponent>()
-                .AddUIComponent<SlidesUIComponent>()
-                .AddUIComponent<ModalUIComponent>()
-                .AddUIComponent<ToastUIComponent>();
+            services.AddExtensions()
+                .AddExtension<ClientUIComponent>()
+                .AddExtension<LoadingUIComponent>()
+                .AddExtension<MarkdownUIComponent>()
+                .AddExtension<SlidesUIComponent>()
+                .AddExtension<ModalUIComponent>()
+                .AddExtension<ToastUIComponent>();
 
             services.AddHttpClient();
 

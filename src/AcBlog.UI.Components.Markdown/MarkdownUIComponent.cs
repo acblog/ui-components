@@ -7,16 +7,12 @@ namespace AcBlog.UI.Components.Markdown
 {
     public class MarkdownUIComponent : UIComponent
     {
-        public MarkdownUIComponent() : this(true)
+        public MarkdownUIComponent()
         {
-        }
-
-        public MarkdownUIComponent(bool autoLoad = true)
-        {
-            AddLocalStyleSheetResource("highlight.js/github.css", autoLoad);
-            AddLocalStyleSheetResource("katex/katex.min.css", autoLoad);
-            AddLocalScriptResource("component-min.js", autoLoad);
-            AddLocalScriptResource("mermaid/mermaid.min.js", autoLoad);
+            AddLocalStyleSheetResource("highlight.js/github.css");
+            AddLocalStyleSheetResource("katex/katex.min.css");
+            AddLocalScriptResource("component-min.js");
+            AddLocalScriptResource("mermaid/mermaid.min.js");
         }
     }
 }
