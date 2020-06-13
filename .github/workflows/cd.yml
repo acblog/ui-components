@@ -27,18 +27,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.node-version }}
-    - name: Restore & Build
+    - name: Install dev deps
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
-      run: |
-        dotnet nuget add source https://sparkshine.pkgs.visualstudio.com/StardustDL/_packaging/feed/nuget/v3/index.json -n aza -u sparkshine -p $env:NUGET_AUTH_TOKEN --store-password-in-clear-text
-        npm install --global gulp
-        dotnet tool install --global Microsoft.Web.LibraryManager.Cli
-        pwsh -c ./tools.ps1 restore
-        dotnet build -c Release /p:Version=${env:build_version}
+      run: pwsh -c ./tools.ps1 dev-deps
+    - name: Restore
+      run: pwsh -c ./tools.ps1 restore
+    - name: Build
+      run: dotnet build -c Release /p:Version=${env:build_version}
     - name: Pack
-      run: |
-        pwsh -c ./tools.ps1 pack
+      run: pwsh -c ./tools.ps1 pack
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
@@ -47,11 +45,17 @@ jobs:
     - name: Deploy
       run: |
         dotnet nuget push ./packages/AcBlog.UI.Components.Core.$env:build_version.nupkg -s aza -k az
+        if (!$?) { exit 1 }
         dotnet nuget push ./packages/AcBlog.UI.Components.Loading.$env:build_version.nupkg -s aza -k az
+        if (!$?) { exit 1 }
         dotnet nuget push ./packages/AcBlog.UI.Components.Markdown.$env:build_version.nupkg -s aza -k az
+        if (!$?) { exit 1 }
         dotnet nuget push ./packages/AcBlog.UI.Components.Slides.$env:build_version.nupkg -s aza -k az
+        if (!$?) { exit 1 }
         dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$env:build_version.nupkg -s aza -k az
+        if (!$?) { exit 1 }
         dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$env:build_version.nupkg -s aza -k az
+        if (!$?) { exit 1 }
   invoke-repo-update:
     needs: [pub-pkgs]
     strategy:
