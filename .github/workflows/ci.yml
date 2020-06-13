@@ -33,15 +33,23 @@ jobs:
         NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
       run: |
         dotnet nuget add source https://sparkshine.pkgs.visualstudio.com/StardustDL/_packaging/feed/nuget/v3/index.json -n aza -u sparkshine -p $env:NUGET_AUTH_TOKEN --store-password-in-clear-text
+        if (!$?) { exit 1 }
         npm install --global gulp
+        if (!$?) { exit 1 }
         dotnet tool install --global Microsoft.Web.LibraryManager.Cli
+        if (!$?) { exit 1 }
         pwsh -c ./tools.ps1 restore
+        if (!$?) { exit 1 }
         dotnet build -c Release
+        if (!$?) { exit 1 }
     - name: Test
       run: |
         mkdir reports/test
+        if (!$?) { exit 1 }
         dotnet test -c Release /p:CollectCoverage=true /p:CoverletOutput=../../reports/test/coverage.json /p:MergeWith=../../reports/test/coverage.json /maxcpucount:1
+        if (!$?) { exit 1 }
         dotnet test -c Release ./test/Test.Base /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../../reports/test/coverage.xml /p:MergeWith=../../reports/test/coverage.json
+        if (!$?) { exit 1 }
     - name: Benchmark
       run: dotnet run -c Release --project ./test/Benchmark.Base
     - name: Generate reports

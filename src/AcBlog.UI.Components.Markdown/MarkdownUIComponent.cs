@@ -9,10 +9,10 @@ namespace AcBlog.UI.Components.Markdown
     {
         public MarkdownUIComponent()
         {
-            AddLocalStyleSheetResource("highlight.js/github.css");
-            AddLocalStyleSheetResource("katex/katex.min.css");
-            AddLocalScriptResource("component-min.js");
-            AddLocalScriptResource("mermaid/mermaid.min.js");
+            AddStyleSheetResource("_content/StardustDL.RazorComponents.Markdown/highlight.js/github.css");
+            AddStyleSheetResource("_content/StardustDL.RazorComponents.Markdown/katex/katex.min.css");
+            AddScriptResource("_content/StardustDL.RazorComponents.Markdown/component-min.js");
+            AddScriptResource("_content/StardustDL.RazorComponents.Markdown/mermaid/mermaid.min.js");
         }
     }
 }
