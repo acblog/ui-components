@@ -1,40 +1,40 @@
 if ($args.Count -gt 0) {
     switch ($args[0]) {
         "npmup?" {
-            Set-Location src/AcBlog.UI.Components.Markdown ; ncu ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Markdown && ncu && Set-Location ../..
             if (!$?) {
                 exit 1
             }
-            Set-Location src/AcBlog.UI.Components.Loading ; ncu ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Loading && ncu && Set-Location ../..
             if (!$?) {
                 exit 1
             }
         }
         "npmup" {
-            Set-Location src/AcBlog.UI.Components.Markdown ; ncu -u ; npm install ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Markdown && ncu -u && npm install && Set-Location ../..
             if (!$?) {
                 exit 1
             }
-            Set-Location src/AcBlog.UI.Components.Loading ; ncu -u ; npm install ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Loading && ncu -u && npm install && Set-Location ../..
             if (!$?) {
                 exit 1
             }
         }
         "restore" {
             Write-Output "Restore npm..."
-            Set-Location src/AcBlog.UI.Components.Markdown ; npm ci ; gulp ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Markdown && npm ci && gulp && Set-Location ../..
             if (!$?) {
                 exit 1
             }
-            Set-Location src/AcBlog.UI.Components.Slides ; libman restore ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Slides && libman restore && Set-Location ../..
             if (!$?) {
                 exit 1
             }
-            Set-Location src/AcBlog.UI.Components.Loading ; npm ci ; gulp ; Set-Location ../..
+            Set-Location src/AcBlog.UI.Components.Loading && npm ci && gulp && Set-Location ../..
             if (!$?) {
                 exit 1
             }
-            dotnet restore -s https://www.myget.org/F/stardustdl/api/v3/index.json -s https://api.nuget.org/v3/index.json
+            dotnet restore
             if (!$?) {
                 exit 1
             }
