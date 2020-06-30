@@ -44,18 +44,13 @@ jobs:
         path: ./packages
     - name: Deploy
       run: |
-        dotnet nuget push ./packages/AcBlog.UI.Components.Core.$env:build_version.nupkg -s aza -k az
-        if (!$?) { exit 1 }
-        dotnet nuget push ./packages/AcBlog.UI.Components.Loading.$env:build_version.nupkg -s aza -k az
-        if (!$?) { exit 1 }
-        dotnet nuget push ./packages/AcBlog.UI.Components.Markdown.$env:build_version.nupkg -s aza -k az
-        if (!$?) { exit 1 }
-        dotnet nuget push ./packages/AcBlog.UI.Components.Slides.$env:build_version.nupkg -s aza -k az
-        if (!$?) { exit 1 }
-        dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$env:build_version.nupkg -s aza -k az
-        if (!$?) { exit 1 }
-        dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$env:build_version.nupkg -s aza -k az
-        if (!$?) { exit 1 }
+        dotnet nuget push ./packages/AcBlog.Extensions.Core.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
+        dotnet nuget push ./packages/AcBlog.UI.Components.Core.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
+        dotnet nuget push ./packages/AcBlog.UI.Components.Loading.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
+        dotnet nuget push ./packages/AcBlog.UI.Components.Markdown.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
+        dotnet nuget push ./packages/AcBlog.UI.Components.Slides.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
+        dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
+        dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
   invoke-repo-update:
     needs: [pub-pkgs]
     strategy:

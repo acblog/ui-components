@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <RootNamespace>AcBlog.UI.Components</RootNamespace>
+    <RootNamespace>AcBlog.Extensions</RootNamespace>
     <Nullable>enable</Nullable>
 
     <Authors>StardustDL</Authors>
     <Company>AcBlog</Company>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/acblog</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/acblog/ui-components</RepositoryUrl>
+    <RepositoryUrl>https://github.com/acblog/extensions</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,9 +29,5 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\AcBlog.Extensions.Core\AcBlog.Extensions.Core.csproj" />
   </ItemGroup>
 </Project>

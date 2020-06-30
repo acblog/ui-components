@@ -1,0 +1,19 @@
+﻿@page "/bootstrap"
+
+@using BootstrapBlazor.Components
+
+@inject MessageService MessageService
+
+<Button Color="Color.Primary" OnClick="OnMessageShow">主要按钮</Button>
+
+<Message />
+
+@code {
+    private void OnMessageShow()
+    {
+        MessageService?.Show(new MessageOption()
+        {
+            Content = "这是一条成功的消息"
+        });
+    }
+}

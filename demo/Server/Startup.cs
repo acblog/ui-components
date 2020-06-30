@@ -13,6 +13,7 @@ using AcBlog.UI.Components.Slides;
 using AcBlog.UI.Components.Modal;
 using AcBlog.UI.Components.Toast;
 using HostBase.Client;
+using AcBlog.UI.Components.Bootstrap;
 
 namespace HostBase.Server
 {
@@ -35,7 +36,8 @@ namespace HostBase.Server
                 .AddExtension<MarkdownUIComponent>()
                 .AddExtension<SlidesUIComponent>()
                 .AddExtension<ModalUIComponent>()
-                .AddExtension<ToastUIComponent>();
+                .AddExtension<ToastUIComponent>()
+                .AddExtension<BootstrapUIComponent>();
 
             services.AddHttpClient();
 

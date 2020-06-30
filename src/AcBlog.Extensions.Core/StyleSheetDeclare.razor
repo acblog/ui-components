@@ -1,0 +1,12 @@
+﻿@inject ExtensionCollection Collection
+
+@foreach (var c in Collection.Extensions)
+{
+    foreach (var r in c.Resources)
+    {
+        if (r.Type == ResourceType.StyleSheet)
+        {
+            <link rel="stylesheet" type="text/css" href="@r.Path" AcBlog_Extensions_Core_Tag="@r.Path" />
+        }
+    }
+}
