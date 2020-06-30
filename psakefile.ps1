@@ -5,7 +5,7 @@ properties {
 
 Task default -depends Restore, Build
 
-Task Deploy -depends Depoly-packages
+Task Deploy -depends Deploy-packages
 
 Task CI -depends Install-deps, Restore, Build, Test, Benchmark, Report
 
@@ -67,7 +67,7 @@ Task NPMUP {
     Set-Location ../..
 }
 
-Task Depoly-packages {
+Task Deploy-packages {
     Exec { dotnet nuget push ./packages/AcBlog.Extensions.Core.$build_version.nupkg -s aza -k az }
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Core.$build_version.nupkg -s aza -k az }
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Loading.$build_version.nupkg -s aza -k az }
@@ -75,6 +75,7 @@ Task Depoly-packages {
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Slides.$build_version.nupkg -s aza -k az }
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$build_version.nupkg -s aza -k az }
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$build_version.nupkg -s aza -k az }
+    Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Bootstrap.$build_version.nupkg -s aza -k az }
 }
 
 Task Restore-Slides {

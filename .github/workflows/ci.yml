@@ -36,7 +36,7 @@ jobs:
         NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
       run: Invoke-psake ci -parameters @{ "NUGET_AUTH_TOKEN" = $env:NUGET_AUTH_TOKEN ; "build_version" = $env:build_version }
     - name: Upload reports
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@v2
       with:
         name: ci-${{ matrix.os }}
         path: ./reports
