@@ -27,30 +27,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.node-version }}
-    - name: Install dev deps
+    - name: Setup psake
+      run: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted; Install-Module -Name psake
+    - name: CD
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
-      run: pwsh -c ./tools.ps1 dev-deps
-    - name: Restore
-      run: pwsh -c ./tools.ps1 restore
-    - name: Build
-      run: dotnet build -c Release /p:Version=${env:build_version}
-    - name: Pack
-      run: pwsh -c ./tools.ps1 pack
+      run: Invoke-psake cd -parameters @{ "NUGET_AUTH_TOKEN" = $env:NUGET_AUTH_TOKEN ; "build_version" = $env:build_version }
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
         name: packages
         path: ./packages
-    - name: Deploy
-      run: |
-        dotnet nuget push ./packages/AcBlog.Extensions.Core.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
-        dotnet nuget push ./packages/AcBlog.UI.Components.Core.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
-        dotnet nuget push ./packages/AcBlog.UI.Components.Loading.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
-        dotnet nuget push ./packages/AcBlog.UI.Components.Markdown.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
-        dotnet nuget push ./packages/AcBlog.UI.Components.Slides.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
-        dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
-        dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$env:build_version.nupkg -s aza -k az || exit $LASTEXITCODE
   invoke-repo-update:
     needs: [pub-pkgs]
     strategy:
