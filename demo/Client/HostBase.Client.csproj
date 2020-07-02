@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\AcBlog.UI.Components.AntDesigns\AcBlog.UI.Components.AntDesigns.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Bootstrap\AcBlog.UI.Components.Bootstrap.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Core\AcBlog.UI.Components.Core.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Loading\AcBlog.UI.Components.Loading.csproj" />

@@ -38,6 +38,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Bootst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.Extensions.Core", "src\AcBlog.Extensions.Core\AcBlog.Extensions.Core.csproj", "{8BD8C258-BB7F-4831-A469-DD72C81AC88A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.AntDesigns", "src\AcBlog.UI.Components.AntDesigns\AcBlog.UI.Components.AntDesigns.csproj", "{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,6 +98,10 @@ Global
 		{8BD8C258-BB7F-4831-A469-DD72C81AC88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD8C258-BB7F-4831-A469-DD72C81AC88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD8C258-BB7F-4831-A469-DD72C81AC88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

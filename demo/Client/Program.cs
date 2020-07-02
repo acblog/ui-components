@@ -14,6 +14,7 @@ using AcBlog.UI.Components.Modal;
 using AcBlog.UI.Components.Toast;
 using AcBlog.Extensions;
 using AcBlog.UI.Components.Bootstrap;
+using AcBlog.UI.Components.AntDesigns;
 
 namespace HostBase.Client
 {
@@ -31,7 +32,8 @@ namespace HostBase.Client
                 .AddExtension<SlidesUIComponent>()
                 .AddExtension<ModalUIComponent>()
                 .AddExtension<ToastUIComponent>()
-                .AddExtension<BootstrapUIComponent>();
+                .AddExtension<BootstrapUIComponent>()
+                .AddExtension<AntDesignUIComponent>();
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 

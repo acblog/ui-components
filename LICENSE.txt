@@ -1,4 +1,4 @@
-UI Components of AcBlog
+UI-Components
 
 Copyright (c) StardustDL. All rights reserved.
 

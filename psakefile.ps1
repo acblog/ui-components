@@ -76,6 +76,7 @@ Task Deploy-packages {
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Modal.$build_version.nupkg -s aza -k az }
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Toast.$build_version.nupkg -s aza -k az }
     Exec { dotnet nuget push ./packages/AcBlog.UI.Components.Bootstrap.$build_version.nupkg -s aza -k az }
+    Exec { dotnet nuget push ./packages/AcBlog.UI.Components.AntDesigns.$build_version.nupkg -s aza -k az }
 }
 
 Task Restore-Slides {

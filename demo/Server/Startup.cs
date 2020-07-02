@@ -14,6 +14,7 @@ using AcBlog.UI.Components.Modal;
 using AcBlog.UI.Components.Toast;
 using HostBase.Client;
 using AcBlog.UI.Components.Bootstrap;
+using AcBlog.UI.Components.AntDesigns;
 
 namespace HostBase.Server
 {
@@ -37,7 +38,8 @@ namespace HostBase.Server
                 .AddExtension<SlidesUIComponent>()
                 .AddExtension<ModalUIComponent>()
                 .AddExtension<ToastUIComponent>()
-                .AddExtension<BootstrapUIComponent>();
+                .AddExtension<BootstrapUIComponent>()
+                .AddExtension<AntDesignUIComponent>();
 
             services.AddHttpClient();
 
