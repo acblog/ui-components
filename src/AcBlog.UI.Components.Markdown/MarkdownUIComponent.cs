@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using StardustDL.RazorComponents.Markdown;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +16,12 @@ namespace AcBlog.UI.Components.Markdown
             AddStyleSheetResource("_content/StardustDL.RazorComponents.Markdown/css/markdown.css");
             AddScriptResource("_content/StardustDL.RazorComponents.Markdown/component-min.js");
             AddScriptResource("_content/StardustDL.RazorComponents.Markdown/mermaid/mermaid.min.js");
+        }
+
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<IMarkdownComponentService, MarkdownComponentService>();
+            base.ConfigureServices(services);
         }
     }
 }

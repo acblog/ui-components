@@ -10,10 +10,7 @@ using AcBlog.Extensions;
 using AcBlog.UI.Components.Loading;
 using AcBlog.UI.Components.Markdown;
 using AcBlog.UI.Components.Slides;
-using AcBlog.UI.Components.Modal;
-using AcBlog.UI.Components.Toast;
 using HostBase.Client;
-using AcBlog.UI.Components.Bootstrap;
 using AcBlog.UI.Components.AntDesigns;
 
 namespace HostBase.Server
@@ -36,9 +33,6 @@ namespace HostBase.Server
                 .AddExtension<LoadingUIComponent>()
                 .AddExtension<MarkdownUIComponent>()
                 .AddExtension<SlidesUIComponent>()
-                .AddExtension<ModalUIComponent>()
-                .AddExtension<ToastUIComponent>()
-                .AddExtension<BootstrapUIComponent>()
                 .AddExtension<AntDesignUIComponent>();
 
             services.AddHttpClient();

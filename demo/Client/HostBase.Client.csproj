@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Components\ModalForm.razor" />
+    <Content Remove="Pages\Bootstrap.razor" />
+    <Content Remove="Pages\Modal.razor" />
+    <Content Remove="Pages\Toast.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0" PrivateAssets="all" />
@@ -15,18 +22,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.AntDesigns\AcBlog.UI.Components.AntDesigns.csproj" />
-    <ProjectReference Include="..\..\src\AcBlog.UI.Components.Bootstrap\AcBlog.UI.Components.Bootstrap.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Core\AcBlog.UI.Components.Core.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Loading\AcBlog.UI.Components.Loading.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Markdown\AcBlog.UI.Components.Markdown.csproj" />
-    <ProjectReference Include="..\..\src\AcBlog.UI.Components.Modal\AcBlog.UI.Components.Modal.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Slides\AcBlog.UI.Components.Slides.csproj" />
-    <ProjectReference Include="..\..\src\AcBlog.UI.Components.Toast\AcBlog.UI.Components.Toast.csproj" />
     <ProjectReference Include="..\Shared\HostBase.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\" />
   </ItemGroup>
 
 </Project>
