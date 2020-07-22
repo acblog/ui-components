@@ -8,10 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AcBlog.UI.Components.Loading;
-using AcBlog.UI.Components.Markdown;
 using AcBlog.UI.Components.Slides;
 using AcBlog.Extensions;
-using AcBlog.UI.Components.AntDesigns;
 
 namespace HostBase.Client
 {
@@ -25,12 +23,12 @@ namespace HostBase.Client
             builder.Services.AddExtensions()
                 .AddExtension<ClientUIComponent>()
                 .AddExtension<LoadingUIComponent>()
-                .AddExtension<MarkdownUIComponent>()
-                .AddExtension<SlidesUIComponent>()
+                // .AddExtension<MarkdownUIComponent>()
+                .AddExtension<SlidesUIComponent>();
                 // .AddExtension<ModalUIComponent>()
                 // .AddExtension<ToastUIComponent>()
                 // .AddExtension<BootstrapUIComponent>()
-                .AddExtension<AntDesignUIComponent>();
+                // .AddExtension<AntDesignUIComponent>();
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 

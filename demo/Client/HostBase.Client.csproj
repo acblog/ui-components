@@ -14,17 +14,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.1" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AcBlog.UI.Components.AntDesigns\AcBlog.UI.Components.AntDesigns.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Core\AcBlog.UI.Components.Core.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Loading\AcBlog.UI.Components.Loading.csproj" />
-    <ProjectReference Include="..\..\src\AcBlog.UI.Components.Markdown\AcBlog.UI.Components.Markdown.csproj" />
     <ProjectReference Include="..\..\src\AcBlog.UI.Components.Slides\AcBlog.UI.Components.Slides.csproj" />
     <ProjectReference Include="..\Shared\HostBase.Shared.csproj" />
   </ItemGroup>

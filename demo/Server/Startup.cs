@@ -8,10 +8,8 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using AcBlog.Extensions;
 using AcBlog.UI.Components.Loading;
-using AcBlog.UI.Components.Markdown;
 using AcBlog.UI.Components.Slides;
 using HostBase.Client;
-using AcBlog.UI.Components.AntDesigns;
 
 namespace HostBase.Server
 {
@@ -31,9 +29,7 @@ namespace HostBase.Server
             services.AddExtensions()
                 .AddExtension<ClientUIComponent>()
                 .AddExtension<LoadingUIComponent>()
-                .AddExtension<MarkdownUIComponent>()
-                .AddExtension<SlidesUIComponent>()
-                .AddExtension<AntDesignUIComponent>();
+                .AddExtension<SlidesUIComponent>();
 
             services.AddHttpClient();
 

@@ -20,8 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Core",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Loading", "src\AcBlog.UI.Components.Loading\AcBlog.UI.Components.Loading.csproj", "{2BE9E40E-A49A-4EB8-8AAD-FA4EAD2D8380}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Markdown", "src\AcBlog.UI.Components.Markdown\AcBlog.UI.Components.Markdown.csproj", "{0E3F0823-5665-4436-8CB0-246690DCCA88}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.Slides", "src\AcBlog.UI.Components.Slides\AcBlog.UI.Components.Slides.csproj", "{7AD93582-E61F-4D19-BC3B-3BDB651DB3A0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostBase.Shared", "demo\Shared\HostBase.Shared.csproj", "{A490A8D9-1A85-499C-B13C-564C8B319524}"
@@ -31,8 +29,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostBase.Server", "demo\Server\HostBase.Server.csproj", "{2BC082F2-7AB6-4A36-BD84-82A7438A4D59}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.Extensions.Core", "src\AcBlog.Extensions.Core\AcBlog.Extensions.Core.csproj", "{8BD8C258-BB7F-4831-A469-DD72C81AC88A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcBlog.UI.Components.AntDesigns", "src\AcBlog.UI.Components.AntDesigns\AcBlog.UI.Components.AntDesigns.csproj", "{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,10 +52,6 @@ Global
 		{2BE9E40E-A49A-4EB8-8AAD-FA4EAD2D8380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BE9E40E-A49A-4EB8-8AAD-FA4EAD2D8380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BE9E40E-A49A-4EB8-8AAD-FA4EAD2D8380}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E3F0823-5665-4436-8CB0-246690DCCA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E3F0823-5665-4436-8CB0-246690DCCA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E3F0823-5665-4436-8CB0-246690DCCA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E3F0823-5665-4436-8CB0-246690DCCA88}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7AD93582-E61F-4D19-BC3B-3BDB651DB3A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7AD93582-E61F-4D19-BC3B-3BDB651DB3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD93582-E61F-4D19-BC3B-3BDB651DB3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,10 +72,6 @@ Global
 		{8BD8C258-BB7F-4831-A469-DD72C81AC88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD8C258-BB7F-4831-A469-DD72C81AC88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD8C258-BB7F-4831-A469-DD72C81AC88A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A79C7385-C00A-4905-9FBB-E7A99DFFDCE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
