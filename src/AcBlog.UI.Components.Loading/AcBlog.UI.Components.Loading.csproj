@@ -25,6 +25,15 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include=".\gulpfile.js">
+      <Pack>False</Pack>
+    </None>
+    <None Include=".\package.json">
+      <Pack>False</Pack>
+    </None>
+    <None Include=".\package-lock.json">
+      <Pack>False</Pack>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

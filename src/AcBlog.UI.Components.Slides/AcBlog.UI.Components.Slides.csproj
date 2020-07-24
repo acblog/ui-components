@@ -25,6 +25,9 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include=".\libman.json">
+      <Pack>False</Pack>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
